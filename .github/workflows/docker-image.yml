@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: chy9002/mark-idea
+    - uses: chy9002/mark-idea@
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag chy9002/mark-idea:$(date +%s)
