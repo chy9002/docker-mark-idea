@@ -1,7 +1,8 @@
 FROM node:latest AS app-front
 RUN git clone --depth 1 https://github.com/Hansanshi/mark-idea-front.git /app-front
 WORKDIR /app-front
-RUN npm install\
+RUN rm -rf package-lock.json \
+    && npm install\
     && npm run build
 RUN apt update\
  && apt install -y zip \
