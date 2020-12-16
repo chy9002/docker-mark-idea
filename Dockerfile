@@ -12,7 +12,7 @@ RUN apt update\
 FROM maven:3-openjdk-8 as app-back
 RUN git clone --depth 1 https://github.com/Hansanshi/mark-idea.git /app
 WORKDIR /app
-COPY --from=app-front /app-front/front.zip /app/resources/front.zip
+COPY --from=app-front /app-front/front.zip /app/src/main/resources/front.zip
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:8-jre-alpine
