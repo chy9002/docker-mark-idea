@@ -1,5 +1,7 @@
 # docker-mark-idea
 
+![Docker](https://github.com/chy9002/docker-mark-idea/workflows/Docker/badge.svg?branch=main)
+
 Build Mark-idea docker image for [Hansanshi/mark-idea](https://github.com/Hansanshi/mark-idea).
 
 * You can run image with follow docker compose configure:
@@ -15,6 +17,7 @@ Build Mark-idea docker image for [Hansanshi/mark-idea](https://github.com/Hansan
       environment:
           - USERNAME=<default-username>
           - PASSWORD=<default-password>
+          - REGISTER=false #true: allow register;false: disallow regisster
       volumes:
               - <local_path>:/app/db
   ```

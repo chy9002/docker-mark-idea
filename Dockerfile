@@ -20,5 +20,9 @@ COPY --from=app-back /app/target/note-0.3.jar /app/note.jar
 WORKDIR /app
 ENV USERNAME=username
 ENV PASSWORD=password
+ENV REGISTER=true
 EXPOSE 8090
-CMD java -jar note.jar --username=${USERNAME} --password=${PASSWORD}
+CMD java -jar note.jar \
+    --username=${USERNAME} \
+    --password=${PASSWORD} \
+    --"register-forbidden"=${REGISTER}
