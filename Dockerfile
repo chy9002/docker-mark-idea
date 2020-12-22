@@ -16,7 +16,7 @@ COPY --from=app-front /app-front/front.zip /app/src/main/resources/front.zip
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:8-jre-alpine
-COPY --from=app-back /app/target/note-0.3.jar /app/note.jar
+COPY --from=app-back /app/target/note-0.4.jar /app/note.jar
 WORKDIR /app
 ENV USERNAME=username
 ENV PASSWORD=password
