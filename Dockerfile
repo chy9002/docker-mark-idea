@@ -17,7 +17,7 @@
 
 FROM openjdk:8-jre-alpine
 RUN mkdir /app \
- && curl -fLo /app/note.jar https://glare.now.sh/Hansanshi/mark-idea/note \
+ && wget https://glare.now.sh/Hansanshi/mark-idea/note -O /app/note.jar \
  || mkdir /app/db \
     #--from=app-back /app/target/note-0.4.jar /app/note.jar
 WORKDIR /app
