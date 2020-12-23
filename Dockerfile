@@ -18,14 +18,14 @@
 FROM openjdk:8-jre-alpine
 RUN mkdir /app \
  && wget https://glare.now.sh/Hansanshi/mark-idea/note -O /app/note.jar \
- || mkdir /app/db \
+ && mkdir /app/db \
     #--from=app-back /app/target/note-0.4.jar /app/note.jar
 WORKDIR /app
 ENV USERNAME=username
 ENV PASSWORD=password
 ENV REGISTER=true
 EXPOSE 8090
-CMD java -jar note.jar \
+CMD java -jar /app/note.jar \
     --username=${USERNAME} \
     --password=${PASSWORD} \
     --"register-forbidden"=${REGISTER}
