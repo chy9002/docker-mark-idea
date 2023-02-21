@@ -23,7 +23,7 @@ Build Mark-idea docker image for [Hansanshi/mark-idea](https://github.com/Hansan
       environment:
           - USERNAME=<default-username>
           - PASSWORD=<default-password>
-          - REGISTER=false #true: allow register;false: disallow regisster
+          - REGISTER=false #true: allow register;false: disallow register
       volumes:
               - <local_path>:/app/db
   ```
